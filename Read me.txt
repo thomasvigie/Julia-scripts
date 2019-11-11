@@ -1,0 +1,22 @@
+This folder contains 2 Julia scripts:
+
+1.) Estimators.jl gathers various estimators for linear models and for nonparametric kernel regression:
+
+- Ordinary Least Squares (OLS)
+- Two Stage Least Squares (TSLS)
+- k-class estimators (see Theil, 1958)
+- the Limited Information Maximum Likelihood (LIML) estimator (see Anderson & Rubin, 1949)
+- The Weighted Minimum Distance (WMD/WMDF) estimator of Antoine & Lavergne (2014)
+- A kernel regression estimator (lcll), that includes local constant and local linear types. The bandwidth is provided by the user, not computed.
+- An estimator that uses a kernel regression in the first stage of linear instrumental variable models (usign the KernelEstimator package 
+  or the lcll function)
+- the function "kernel_hat_matrix" computes the "hat" matrix used in kernel regression
+- "hurvic_AIC" computes the AIC type function for the bandwidth, from Hurvic, Simonoff & Tsai (1999)
+- "iv_AIC" extends teh criterion to linear instrumental variable models by changing the hat matrix used
+- "min_AIC_iv" attempts to minimize "iv_AIC" to find the optimal bandwidth. Under construction.
+- "TV_kernel_iv" computes the estimator resulting from finding the optimal bandwidth via "min_AIC_iv". Under construction
+
+
+2.) auxiliary functions.jl contains several function as for simulation purposes. The main two are:
+- a Gram-Schmidt orthogonalization function
+- a Data Generating Process function for linear instrumental variables
